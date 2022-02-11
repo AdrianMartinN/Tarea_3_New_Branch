@@ -1,4 +1,45 @@
-			} while (x >= tamanyo);
+import java.util.Scanner;
+
+public class buscaminasmodified {
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) {
+		//ALT +nº
+		//218 ┌
+		//196 ─
+		//192 └
+		//217 ┘
+		//191 ┐
+		//179 │
+		//176 ░
+		//177 ▒
+		//178 ▓
+		//15  ☼
+		int tamanyo;
+		System.out.println("De cuanto quieres que sea el tablero?");
+		tamanyo=Integer.parseInt(sc.nextLine());
+		int [][]tablero=new int [tamanyo] [tamanyo];
+		boolean [][] abiertos=new boolean [tamanyo][tamanyo];
+		boolean [][] marcas=new boolean [tamanyo][tamanyo];
+		InicializaAbiertos(abiertos);
+		LasBombasJAJA(tablero);
+		NumerosAlrededor(tablero);
+
+
+		int x;
+		int y;
+		do {
+			MuestraTablero(abiertos, tablero, marcas);
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			do {
+				do {
+					System.out.println("Donde quieres de la x quieres tirar?");
+					x = Integer.parseInt(sc.nextLine());
+					if (x >= tamanyo) {
+						System.out.println("Ese numero no es correcto escoge otro numero porfavor");
+					}
+				} while (x >= tamanyo);
 				do {
 					System.out.println("Donde quieres de la y quieres tirar?");
 					y = Integer.parseInt(sc.nextLine());
@@ -210,5 +251,4 @@
 
 
 
-} 
-
+}
